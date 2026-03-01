@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case $1 in:
+case "$1" in
 	"start"):
 	docker compose up -d
 	;;
@@ -9,6 +9,7 @@ case $1 in:
 	;;
 	"stop"):
 	docker compose down -v --remove-orphans
+	;;
 	*)
 	echo "прием, база, ответьте"
 esac
