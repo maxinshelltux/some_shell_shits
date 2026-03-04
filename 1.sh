@@ -1,16 +1,19 @@
 #!/bin/sh
 
+d_c () {
+	docker compose "$@"
+}
 case "$1" in
 	"start"):
-	docker compose up -d
+	d_c up -d
 	;;
 	"show"):
-	docker compose ps
+	d_c ps
 	;;
 	"stop"):
-	docker compose down -v --remove-orphans
+	d_c down -v --remove-orphans
 	;;
 	*)
-	echo "прием, база, ответьте"
+	echo "err input(0)"
 esac
 
